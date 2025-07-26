@@ -1,61 +1,70 @@
-# Credit Risk Exploratory Data Analysis (EDA)
+# Predicting Mortality of Heart Failure Patients
 
-This project explores a credit-related dataset to understand customer behavior, loan repayment trends, and risk factors. The goal of this EDA is to derive insights from the data that can help financial institutions in making informed decisions about loan approvals and risk management.
+This project aims to build a predictive model for identifying the risk of death in patients suffering from heart failure. Using clinical records and machine learning algorithms, we analyze various patient parameters to determine the likelihood of mortality, which can assist healthcare providers in proactive treatment planning.
 
-## 📊 Objective
+## 🩺 Project Overview
 
-- Understand the distribution and correlation of features affecting credit risk.
-- Analyze patterns in customer defaults and repayment behavior.
-- Identify potential indicators of creditworthiness.
+The dataset consists of clinical features such as age, blood pressure, ejection fraction, serum creatinine, and other medical indicators. We preprocess the data, perform exploratory data analysis (EDA), and apply classification models to predict whether a patient is likely to die during the follow-up period.
 
-## 🧾 Dataset Overview
+## 📊 Features
 
-The dataset includes customer demographic and financial information, along with repayment behavior. Typical features may include:
+- Age of patient
+- Anaemia (binary)
+- High blood pressure (binary)
+- Creatinine phosphokinase levels
+- Diabetes (binary)
+- Ejection fraction
+- Platelets count
+- Serum creatinine
+- Serum sodium
+- Sex
+- Smoking
+- Time (follow-up period)
+- Death event (target)
 
-- **Customer ID**
-- **Age**
-- **Gender**
-- **Education**
-- **Marital Status**
-- **Limit Balance (Credit Limit)**
-- **Payment History**
-- **Bill Amounts**
-- **Previous Payments**
-- **Default Payment (Target variable)**
+## 📁 Dataset
 
-> Note: Exact feature names depend on the specific dataset structure used in the notebook.
+- **Source**: UCI Machine Learning Repository  
+- **Records**: 299 patient cases  
+- **Target variable**: `DEATH_EVENT` (1 = death, 0 = survived)
 
-## 🔍 EDA Highlights
+## ⚙️ Models Used
 
-- **Missing value analysis**
-- **Univariate & bivariate analysis**
-- **Correlation matrix and heatmap**
-- **Distribution of default vs. non-default customers**
-- **Boxplots and barplots for categorical vs numerical relationships**
-- **Insights on how factors like education, age, and repayment history affect default rate**
+- **Support Vector Machine (SVM)**
+- **Artificial Neural Network (ANN)**
+- Others explored: Logistic Regression, Random Forest, etc.
 
-## 🧰 Tools & Libraries
+## 📈 Evaluation Metrics
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Plotly (optional for interactive visualizations)
+We evaluated models using:
 
-## 🚀 Getting Started
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1 Score**
+- **ROC-AUC Curve**
+
+> 🔍 **Best Model:**  
+> The Artificial Neural Network outperformed the SVM model with better precision, recall, and F1-score, showing its strength in capturing complex non-linear patterns.
+
+## 🧪 Setup & Run
 
 ### Requirements
 
+Install the dependencies with:
+
 ```bash
-pip install pandas numpy matplotlib seaborn plotly
+pip install -r requirements.txt
 
-📈 Key Findings
-Younger customers and those with lower education levels show a higher tendency to default.
-
-Strong correlations found between previous payment history and likelihood of default.
 
 Limit balance and bill amount distributions vary widely across customer segments.
+
+✅ Conclusion
+The ANN model provided promising results in predicting heart failure deaths.
+
+The use of medical parameters enables explainable and actionable insights for healthcare decisions.
+
+Model can be further improved by hyperparameter tuning and using ensemble techniques.
 
 📝 Conclusion
 The EDA provides a strong foundation for building a predictive model for credit default. It reveals key risk indicators and helps refine feature selection for future modeling.
