@@ -51,7 +51,7 @@ We evaluated models using:
 
 ### Requirements
 
-Install the dependencies with:
+Install the dependencies with::
 
 ```bash
 pip install -r requirements.txt
